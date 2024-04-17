@@ -9,9 +9,9 @@ let getWeather = async () => {
     let data = await response.json()
     console.log(data)
     weather = await data;
-    weatherCity.innerHTML = "City " + await weather.name;
-    weatherTemp.innerHTML = "Temp: " + await weather.main.temp + "&deg;C";
-    weatherDesc.innerHTML = "Description " + await weather.weather[0].description;
+    weatherCity.innerHTML = await weather.name;
+    weatherTemp.innerHTML = await weather.main.temp + "&deg;C";
+    weatherDesc.innerHTML = await weather.weather[0].description;
     weatherIcon.src = await `http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`;
 }
 getWeather();
